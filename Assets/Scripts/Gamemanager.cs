@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Gamemanager : MonoBehaviour
 {
@@ -10,6 +12,11 @@ public class Gamemanager : MonoBehaviour
 
     public LayerMask tileMask;
 
+    public int suns;
+    public Text sunText;
+
+    public LayerMask sunMask;
+    
     public void BuyPlant(GameObject plant, Sprite sprite)
     {
         currentPlant = plant;
@@ -18,6 +25,8 @@ public class Gamemanager : MonoBehaviour
 
     private void Update()
     {
+        sunText.text = suns.ToString();
+
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, tileMask);
 
         foreach(Transform tile in tiles)
@@ -34,6 +43,17 @@ public class Gamemanager : MonoBehaviour
                 hit.collider.GetComponent<Tile>().hasPlant = true;
                 currentPlant = null;
                 currentPlantSprite = null;
+            }
+        }
+
+        RaycastHit2D sunhit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, sunMask);
+
+        if (sunhit.collider)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                suns += 25;
+                Destroy(sunhit.collider.gameObject);
             }
         }
     }

@@ -728,7 +728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantSprite: {fileID: 21300000, guid: 297cb8be05efd3143b8596c90c1cea38, type: 3}
   plantObject: {fileID: 5125583242280547724, guid: 83b0ee0be03cb7541bcde15bedd90ba8, type: 3}
-  price: 0
+  price: 100
   icon: {fileID: 977142840}
   priceText: {fileID: 1456905450}
 --- !u!1 &158562896
@@ -1007,6 +1007,7 @@ RectTransform:
   m_Children:
   - {fileID: 549346382}
   - {fileID: 1785461379}
+  - {fileID: 1034080767}
   m_Father: {fileID: 158562900}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3584,6 +3585,11 @@ MonoBehaviour:
   tileMask:
     serializedVersion: 2
     m_Bits: 64
+  suns: 100
+  sunText: {fileID: 1034080765}
+  sunMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!4 &930125212
 Transform:
   m_ObjectHideFlags: 0
@@ -3993,6 +3999,85 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1034080764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1034080767}
+  - component: {fileID: 1034080766}
+  - component: {fileID: 1034080765}
+  m_Layer: 5
+  m_Name: Suns
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1034080765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034080764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 925cfd2efbae56c49a2e9729314e8079, type: 3}
+    m_FontSize: 39
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 92
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1034080766
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034080764}
+  m_CullTransparentMesh: 1
+--- !u!224 &1034080767
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034080764}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 168444522}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -878.0888, y: 398.2}
+  m_SizeDelta: {x: 104.6779, y: 43.0706}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1085660733
 GameObject:
   m_ObjectHideFlags: 0
@@ -5370,7 +5455,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: 100
 --- !u!222 &1456905451
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5379,6 +5464,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1456905448}
   m_CullTransparentMesh: 1
+--- !u!1 &1460471847
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1460471849}
+  - component: {fileID: 1460471848}
+  m_Layer: 0
+  m_Name: SunSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1460471848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460471847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22ac61d6c45e3d440bc97a84905006e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sunObject: {fileID: 4652349920278308895, guid: d938f3de0d14ee4488374eeeffc5adc3, type: 3}
+--- !u!4 &1460471849
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460471847}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1501961536
 GameObject:
   m_ObjectHideFlags: 0
@@ -7833,3 +7963,4 @@ SceneRoots:
   - {fileID: 158562900}
   - {fileID: 129962098}
   - {fileID: 930125212}
+  - {fileID: 1460471849}
