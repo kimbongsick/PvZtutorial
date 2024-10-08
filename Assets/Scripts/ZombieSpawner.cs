@@ -11,6 +11,7 @@ public class ZombieSpawner : MonoBehaviour
 
     private void Start()
     {
+        // SpawnZombie를 2초후에 5초마다 실행
         InvokeRepeating("SpawnZombie", 2, 5);
     }
     void SpawnZombie()

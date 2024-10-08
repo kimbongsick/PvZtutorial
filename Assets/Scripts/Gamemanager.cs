@@ -17,7 +17,7 @@ public class Gamemanager : MonoBehaviour
 
     public LayerMask sunMask;
     
-    public void BuyPlant(GameObject plant, Sprite sprite)
+    public void BuyPlant(GameObject plant, Sprite sprite)   // PlantSlot 컴포넌트로부터 plant와 sprite를 전달받음
     {
         currentPlant = plant;
         currentPlantSprite = sprite;
@@ -29,7 +29,7 @@ public class Gamemanager : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, tileMask);
 
-        foreach(Transform tile in tiles)
+        foreach(Transform tile in tiles)    // loop를 돌려서 tile의 SpriteRenderer를 false로 바꿈
             tile.GetComponent<SpriteRenderer>().enabled = false;
 
         if(hit.collider && currentPlant)
@@ -47,7 +47,7 @@ public class Gamemanager : MonoBehaviour
         }
 
         RaycastHit2D sunhit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, sunMask);
-
+        
         if (sunhit.collider)
         {
             if (Input.GetMouseButtonDown(0))

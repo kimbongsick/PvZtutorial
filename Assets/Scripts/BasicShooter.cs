@@ -24,7 +24,7 @@ public class BasicShooter : MonoBehaviour
 
     private void Update()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, shootMask);    
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, range, shootMask);    
 
         if(hit.collider)
         {
