@@ -5,9 +5,9 @@ using UnityEngine;
 public class ZombieSpawner : MonoBehaviour
 {
 
-    public Transform[] spawnpoints;
+    public Transform[] spawnpoints;     // 스폰위치 배열
 
-    public GameObject zombie;
+    public GameObject zombie;   // 좀비 오브젝트
 
     private void Start()
     {
@@ -16,8 +16,8 @@ public class ZombieSpawner : MonoBehaviour
     }
     void SpawnZombie()
     {
-        int r = Random.Range(0, spawnpoints.Length);
-        GameObject myZombie = Instantiate(zombie, spawnpoints[r].position, Quaternion.identity);
+        int r = Random.Range(0, spawnpoints.Length);    // 랜덤배치
+        GameObject myZombie = Instantiate(zombie, spawnpoints[r].position, Quaternion.identity);    // 좀비 복제생성
     }
 
 }

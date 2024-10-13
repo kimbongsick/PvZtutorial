@@ -14,7 +14,7 @@ public class SunSpawner : MonoBehaviour
 
     void SpawnSun()
     {
-        Instantiate(sunObject);
-        Invoke("SpawnSun", Random.Range(4, 10));
+        Instantiate(sunObject);     // sun오브젝트 복제
+        Invoke("SpawnSun", Random.Range(4, 10));    // 랜덤한 위치에 SpawnSun 함수 실행
     }
 }

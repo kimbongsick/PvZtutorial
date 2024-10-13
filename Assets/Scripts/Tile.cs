@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    public bool hasPlant;
+    public bool hasPlant;   // 타일에 식물오브젝트 여부
 }
