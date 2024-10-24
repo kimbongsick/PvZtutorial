@@ -6,7 +6,12 @@ public class Bullet : MonoBehaviour
 {
     public int damage;  // 공격력
 
-    public float speed = 4f;  // 총알속도
+    public float speed = 2f;  // 총알속도
+
+    private void Start()
+    {
+        Destroy(gameObject, 10);
+    }
 
     private void Update()
     {

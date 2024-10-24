@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a2579cd356b1704b8b824e7817764b4, type: 3}
+  m_Name: Cone
+  m_EditorClassIdentifier: 
+  health: 15
+  speed: 0.006
+  damage: 1
+  range: 0.5
+  eatCooldown: 1
+  sprite: {fileID: 21300000, guid: 7622a777df15c184ab16495aa8cc75a9, type: 3}
+  deathSprite: {fileID: 21300000, guid: 5f054c92cdc477e4ea8a8be788bf2477, type: 3}

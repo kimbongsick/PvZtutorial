@@ -5,16 +5,29 @@ using UnityEngine;
 public class Zombie : MonoBehaviour
 {
 
-    public float speed;     // 이동속도
-    public int health;      // 체력
-    public int damage;      // 공격력
+    private float speed;     // 이동속도
+    private int health;      // 체력
+    private int damage;      // 공격력
 
-    public float range;     // 공격범위
-    public LayerMask plantMask;     // 공격대상 레이어
+    private float range;     // 공격범위
 
-    public float eatCooldown;       // 공격 쿨타임
+    public ZombieType type;  // 초기화용 ZombieType 클래스변수 선언
+
+    private LayerMask plantMask;     // 공격대상 레이어
+
+    private float eatCooldown;       // 공격 쿨타임
     private bool canEat = true;     // 공격 가능여부
     public Plant targetPlant;       // 공격대상 클래스
+
+    private void Start()
+    {
+        health = type.health;
+        speed = type.speed;
+        damage = type.damage;
+        range = type.range;
+
+        GetComponent<SpriteRenderer>().sprite = type.sprite;
+    }
 
     private void Update()
     {
@@ -24,6 +37,11 @@ public class Zombie : MonoBehaviour
         {
             targetPlant = hit.collider.GetComponent<Plant>();   // 충돌한 오브젝트의 Plant 컴포넌트를 가져옴
             Eat();  // 공격함수 실행
+        }
+
+        if(health == 1)
+        {
+            GetComponent<SpriteRenderer>().sprite = type.deathSprite;
         }
     }
 
