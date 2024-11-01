@@ -99,6 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: a13b55b119e40d7498748a2e2d941042, type: 2}
+  plantMask:
+    serializedVersion: 2
+    m_Bits: 512
   targetPlant: {fileID: 0}
 --- !u!61 &6778504436130720874
 BoxCollider2D:
@@ -136,7 +139,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 2}
+    oldSize: {x: 1.4285715, y: 2.857143}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

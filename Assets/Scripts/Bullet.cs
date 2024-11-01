@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour
 
     public float speed = 2f;  // 총알속도
 
+    public bool freeze;
+
     private void Start()
     {
         Destroy(gameObject, 10);
@@ -22,7 +24,7 @@ public class Bullet : MonoBehaviour
     {
         if(other.TryGetComponent<Zombie>(out Zombie zombie))    // 좀비 컴포넌트를 가져와 대상 오브젝트변수로 실행
         {
-            zombie.Hit(damage);     // 피격판정 실행
+            zombie.Hit(damage, freeze);     // 피격판정 실행
             Destroy(gameObject);    // 총알 파괴
         }
     }

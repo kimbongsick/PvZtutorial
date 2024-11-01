@@ -8,12 +8,11 @@ public class Zombie : MonoBehaviour
     private float speed;     // 이동속도
     private int health;      // 체력
     private int damage;      // 공격력
-
     private float range;     // 공격범위
 
     public ZombieType type;  // 초기화용 ZombieType 클래스변수 선언
 
-    private LayerMask plantMask;     // 공격대상 레이어
+    public LayerMask plantMask;     // 공격대상 레이어
 
     private float eatCooldown;       // 공격 쿨타임
     private bool canEat = true;     // 공격 가능여부
@@ -25,6 +24,7 @@ public class Zombie : MonoBehaviour
         speed = type.speed;
         damage = type.damage;
         range = type.range;
+        eatCooldown = type.eatCooldown;
 
         GetComponent<SpriteRenderer>().sprite = type.sprite;
     }
@@ -37,11 +37,6 @@ public class Zombie : MonoBehaviour
         {
             targetPlant = hit.collider.GetComponent<Plant>();   // 충돌한 오브젝트의 Plant 컴포넌트를 가져옴
             Eat();  // 공격함수 실행
-        }
-
-        if(health == 1)
-        {
-            GetComponent<SpriteRenderer>().sprite = type.deathSprite;
         }
     }
 
@@ -66,10 +61,30 @@ public class Zombie : MonoBehaviour
             transform.position -= new Vector3(speed, 0, 0);
     }
 
-    public void Hit(int damage)     // 공격함수
+    public void Hit(int damage, bool freeze)     // 공격함수
     {
         health -= damage;
-        if(health <= 0)
-            Destroy(gameObject);
+        if (freeze)
+            Freeze();
+        if (health <= 0)
+        {
+            GetComponent<SpriteRenderer>().sprite = type.deathSprite;
+            Destroy(gameObject, 1);
+        }
+
+    }
+
+    void Freeze()
+    {
+        CancelInvoke("UnFreeze");
+        GetComponent<SpriteRenderer>().color = Color.blue;
+        speed = type.speed / 2;
+        Invoke("UnFreeze", 5);
+    }
+
+    void UnFreeze() 
+    {
+        GetComponent<SpriteRenderer>().color = Color.white;
+        speed = type.speed;
     }
 }

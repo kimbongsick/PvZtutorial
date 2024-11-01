@@ -15,7 +15,7 @@ public class SunSpawner : MonoBehaviour
     void SpawnSun()
     {
         GameObject mySun = Instantiate(sunObject, new Vector3(Random.Range(-4f, 8.35f), 6, 0), Quaternion.identity);
-        mySun.GetComponent<Sun>().dropToYPos = Random.Range(2f, -3f);
-        Invoke("SpawnSun", Random.Range(4, 10));    // 랜덤한 위치에 SpawnSun 함수 실행
+        mySun.GetComponent<Sun>().dropToYPos = Random.Range(2f, -3f);   // Sun컴포넌트에 접근해서 dropToYPos값 전달 
+        Invoke("SpawnSun", Random.Range(4, 10));    // 랜덤한 시간에 SpawnSun 함수 실행
     }
 }

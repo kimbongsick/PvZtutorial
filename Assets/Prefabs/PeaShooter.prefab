@@ -133,8 +133,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8863766978144256559, guid: 98920f776167bc44f9f0e66156874a29, type: 3}
   shootOrigin: {fileID: 6434999952828624908}
-  cooldown: 2.5
-  range: 6
+  cooldown: 1
+  range: 15
   shootMask:
     serializedVersion: 2
     m_Bits: 128

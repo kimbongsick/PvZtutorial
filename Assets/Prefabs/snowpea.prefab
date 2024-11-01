@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -4574547816291980269}
   - component: {fileID: -7508733557940908713}
   m_Layer: 0
-  m_Name: pea
+  m_Name: snowpea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8c25b83a703862e41882b7b28cfc03f2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f931b3c9654a9d64793a8524e7a2be29, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   speed: 4
+  freeze: 1
 --- !u!50 &-4574547816291980269
 Rigidbody2D:
   serializedVersion: 4
