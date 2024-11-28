@@ -39,10 +39,19 @@ public class Gamemanager : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0) && !hit.collider.GetComponent<Tile>().hasPlant)     // 식물이 없는 타일에 마우스 좌클릭시 실행
             {
-                Instantiate(currentPlant, hit.collider.transform.position, Quaternion.identity);    // 식물을 복제하여 배치
-                hit.collider.GetComponent<Tile>().hasPlant = true;  // 타일에 식물배치여부를 true로 변경
+                GameObject newPlant = Instantiate(currentPlant, hit.collider.transform.position, Quaternion.identity);    // 식물을 복제하여 배치
+                Tile tile = hit.collider.GetComponent<Tile>();
+                tile.hasPlant = true;  // 타일에 식물 배치여부를 true로 변경
+
+                // Plant 스크립트를 초기화
+                newPlant.GetComponent<Plant>().Initialize(tile);
+
                 currentPlant = null;        // 들고있던 식물을 제거
                 currentPlantSprite = null;  // 스프라이트도 제거
+
+                //hit.collider.GetComponent<Tile>().hasPlant = true;  // 타일에 식물배치여부를 true로 변경
+                //currentPlant = null;        // 들고있던 식물을 제거
+                //currentPlantSprite = null;  // 스프라이트도 제거
             }
         }
 
