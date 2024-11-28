@@ -16,7 +16,7 @@ public class Gamemanager : MonoBehaviour
     public Text sunText;                // 점수 텍스트
 
     public LayerMask sunMask;
-    
+
     public void BuyPlant(GameObject plant, Sprite sprite)   // 구매시 PlantSlot 컴포넌트로부터 plant와 sprite를 전달받음
     {
         currentPlant = plant;
@@ -29,10 +29,10 @@ public class Gamemanager : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, tileMask);  // 화면상 마우스 클릭한 좌표값(식물 배치용)
 
-        foreach(Transform tile in tiles)    // loop를 돌려서 tile의 SpriteRenderer를 false로 바꿈
+        foreach (Transform tile in tiles)    // loop를 돌려서 tile의 SpriteRenderer를 false로 바꿈
             tile.GetComponent<SpriteRenderer>().enabled = false;
 
-        if(hit.collider && currentPlant)    // 식물을 가진 상태에서, 타일에 오브젝트 배치
+        if (hit.collider && currentPlant)    // 식물을 가진 상태에서, 타일에 오브젝트 배치
         {
             hit.collider.GetComponent<SpriteRenderer>().sprite = currentPlantSprite;    // 타일 스프라이트를 Plant오브젝트 Sprite로 변경
             hit.collider.GetComponent<SpriteRenderer>().enabled = true;                 // SpriteRenderer를 true바꿔 보이도록 재설정
